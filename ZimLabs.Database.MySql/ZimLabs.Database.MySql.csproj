@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Andreas Pouwels</Authors>
+    <Description>Provides a class for the easy connection to a MySQL database</Description>
+    <Copyright>Andreas Pouwels</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/InvaderZim85/ZimLabs.Database.MySql</PackageProjectUrl>
+    <PackageIcon>Logo.png</PackageIcon>
+    <PackageIconUrl />
+    <RepositoryUrl>https://github.com/InvaderZim85/ZimLabs.Database.MySql</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Helper, Database, MySql, Connector</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>E:\Proggen\Utility\ZimLabs.Database.MySql\ZimLabs.Database.MySql\ZimLabs.Database.MySql.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.19" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

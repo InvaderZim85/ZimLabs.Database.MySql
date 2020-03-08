@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZimLabs.Database.MySql</name>
+    </assembly>
+    <members>
+        <member name="T:ZimLabs.Database.MySql.Connector">
+            <summary>
+            Provides functions / properties for the interaction with a MySql database
+            </summary>
+        </member>
+        <member name="F:ZimLabs.Database.MySql.Connector._disposed">
+            <summary>
+            Contains the value which indicates if the class was already disposed
+            </summary>
+        </member>
+        <member name="F:ZimLabs.Database.MySql.Connector._settings">
+            <summary>
+            Contains the settings
+            </summary>
+        </member>
+        <member name="F:ZimLabs.Database.MySql.Connector._connectionString">
+            <summary>
+            Contains the connection string
+            </summary>
+        </member>
+        <member name="F:ZimLabs.Database.MySql.Connector._connection">
+            <summary>
+            Contains the connection
+            </summary>
+        </member>
+        <member name="P:ZimLabs.Database.MySql.Connector.Connection">
+            <summary>
+            Gets the current connection
+            </summary>
+        </member>
+        <member name="M:ZimLabs.Database.MySql.Connector.#ctor(ZimLabs.Database.MySql.DatabaseSettings)">
+            <summary>
+            Creates a new instance of the <see cref="T:ZimLabs.Database.MySql.Connector"/>
+            </summary>
+            <param name="settings">The settings for the database connection</param>
+        </member>
+        <member name="M:ZimLabs.Database.MySql.Connector.CreateConnectionString">
+            <summary>
+            Creates the connection string
+            </summary>
+        </member>
+        <member name="M:ZimLabs.Database.MySql.Connector.CreateConnection">
+            <summary>
+            Creates a new connection
+            </summary>
+        </member>
+        <member name="M:ZimLabs.Database.MySql.Connector.CloseConnection">
+            <summary>
+            Closes the connection
+            </summary>
+        </member>
+        <member name="M:ZimLabs.Database.MySql.Connector.SwitchDatabase(System.String)">
+            <summary>
+            Switches the database
+            </summary>
+            <param name="database">The name of the database</param>
+            <exception cref="T:System.ArgumentNullException">Occurs when the database name is null or empty</exception>
+        </member>
+        <member name="M:ZimLabs.Database.MySql.Connector.Dispose">
+            <summary>
+            Disposes the class
+            </summary>
+        </member>
+        <member name="T:ZimLabs.Database.MySql.DatabaseSettings">
+            <summary>
+            Represents the settings for the database connection
+            </summary>
+        </member>
+        <member name="P:ZimLabs.Database.MySql.DatabaseSettings.Server">
+            <summary>
+            Gets or sets the name of the server
+            </summary>
+        </member>
+        <member name="P:ZimLabs.Database.MySql.DatabaseSettings.Database">
+            <summary>
+            Gets or sets the name of the database
+            </summary>
+        </member>
+        <member name="P:ZimLabs.Database.MySql.DatabaseSettings.UserId">
+            <summary>
+            Gets or sets the user id
+            </summary>
+        </member>
+        <member name="P:ZimLabs.Database.MySql.DatabaseSettings.Password">
+            <summary>
+            Gets or sets the password
+            </summary>
+        </member>
+        <member name="P:ZimLabs.Database.MySql.DatabaseSettings.Port">
+            <summary>
+            Gets or sets the port
+            </summary>
+        </member>
+        <member name="T:ZimLabs.Database.MySql.Helper">
+            <summary>
+            Provides several helper functions
+            </summary>
+        </member>
+        <member name="M:ZimLabs.Database.MySql.Helper.ToInsecureString(System.Security.SecureString)">
+            <summary>
+            Converts a secure string into a normal string
+            </summary>
+            <param name="value">The secure string</param>
+            <returns>The insecure string</returns>
+            <exception cref="T:System.ArgumentNullException">Will be thrown when the parameter is null</exception>
+        </member>
+        <member name="M:ZimLabs.Database.MySql.Helper.ToSecureString(System.String)">
+            <summary>
+            Converts a string into a secure string
+            </summary>
+            <param name="value">The string</param>
+            <returns>The secure string</returns>
+            <exception cref="T:System.ArgumentNullException">Will be thrown when the parameter is null</exception>
+        </member>
+    </members>
+</doc>
