@@ -13,10 +13,12 @@
     <RepositoryUrl>https://github.com/InvaderZim85/ZimLabs.Database.MySql</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Helper, Database, MySql, Connector</PackageTags>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Added new ctor</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>E:\Proggen\Utility\ZimLabs.Database.MySql\ZimLabs.Database.MySql\ZimLabs.Database.MySql.xml</DocumentationFile>
+    <DocumentationFile>D:\Repositories\NuGet_Packages\ZimLabs.Database.MySql\ZimLabs.Database.MySql\ZimLabs.Database.MySql.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

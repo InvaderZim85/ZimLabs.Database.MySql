@@ -56,6 +56,15 @@ namespace ZimLabs.Database.MySql
         }
 
         /// <summary>
+        /// Creates a new instance of the <see cref="Connector"/>
+        /// </summary>
+        /// <param name="connectionString">The connection string</param>
+        public Connector(SecureString connectionString)
+        {
+            _connectionString = connectionString;
+        }
+
+        /// <summary>
         /// Creates the connection string
         /// </summary>
         private void CreateConnectionString()

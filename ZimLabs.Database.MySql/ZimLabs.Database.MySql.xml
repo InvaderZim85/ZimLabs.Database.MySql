@@ -40,6 +40,12 @@
             </summary>
             <param name="settings">The settings for the database connection</param>
         </member>
+        <member name="M:ZimLabs.Database.MySql.Connector.#ctor(System.Security.SecureString)">
+            <summary>
+            Creates a new instance of the <see cref="T:ZimLabs.Database.MySql.Connector"/>
+            </summary>
+            <param name="connectionString">The connection string</param>
+        </member>
         <member name="M:ZimLabs.Database.MySql.Connector.CreateConnectionString">
             <summary>
             Creates the connection string
