@@ -31,5 +31,27 @@ namespace ZimLabs.Database.MySql
         /// Gets or sets the port
         /// </summary>
         public uint Port { get; set; }
+
+        /// <summary>
+        /// Creates a new empty instance of the <see cref="DatabaseSettings"/>
+        /// </summary>
+        public DatabaseSettings(){ }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="DatabaseSettings"/>
+        /// </summary>
+        /// <param name="server">The name / path of the server</param>
+        /// <param name="database">The name of the database</param>
+        /// <param name="userId">The user id</param>
+        /// <param name="password">The password</param>
+        /// <param name="port">The port (optional)</param>
+        public DatabaseSettings(string server, string database, string userId, SecureString password, uint port = 3306)
+        {
+            Server = server;
+            Database = database;
+            UserId = userId;
+            Password = password;
+            Port = port;
+        }
     }
 }

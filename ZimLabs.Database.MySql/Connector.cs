@@ -58,6 +58,34 @@ namespace ZimLabs.Database.MySql
         /// <summary>
         /// Creates a new instance of the <see cref="Connector"/>
         /// </summary>
+        /// <param name="server">The name / path of the server</param>
+        /// <param name="database">The name of the database</param>
+        /// <param name="userId">The user id</param>
+        /// <param name="password">The password</param>
+        /// <param name="port">The port (optional)</param>
+        public Connector(string server, string database, string userId, string password, uint port = 3306) : this(
+            new DatabaseSettings(server, database, userId, password.ToSecureString(), port))
+        {
+
+        }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="Connector"/>
+        /// </summary>
+        /// <param name="server">The name / path of the server</param>
+        /// <param name="database">The name of the database</param>
+        /// <param name="userId">The user id</param>
+        /// <param name="password">The password</param>
+        /// <param name="port">The port (optional)</param>
+        public Connector(string server, string database, string userId, SecureString password, uint port = 3306) : this(
+            new DatabaseSettings(server, database, userId, password, port))
+        {
+
+        }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="Connector"/>
+        /// </summary>
         /// <param name="connectionString">The connection string</param>
         public Connector(SecureString connectionString)
         {
