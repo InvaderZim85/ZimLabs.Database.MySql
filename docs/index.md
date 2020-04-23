@@ -51,8 +51,6 @@ var settings = new DatabaseSettings
 var connector = new Connector(settings);
 ```
 
-> **NOTE**: If you use the constructor `Connector(string dataSource, string initialCatalog)` the value for the parameter `IntegratedSecurity` will be set to `true`.
-
 > **NOTE**: The extension method `ToSecureString()` is located in the `Helper` class, which is a part of the package.
 
 ## Example
