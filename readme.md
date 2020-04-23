@@ -1,6 +1,5 @@
 # ZimLabs.Database.MySql
 
-Provides a class for the connection to a MySQL Database.
+![Nuget](https://img.shields.io/nuget/v/ZimLabs.Database.MySql) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/InvaderZim85/ZimLabs.Database.MySql)
 
-## Dependencies
-- MySql.Data
+For more information click here: [ZimLabs.Database.MsSql](https://invaderzim85.github.io/ZimLabs.Database.MySql/)
