@@ -1,5 +1,3 @@
-# ZimLabs.Database.MsSql
-
 ![Nuget](https://img.shields.io/nuget/v/ZimLabs.Database.MySql) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/InvaderZim85/ZimLabs.Database.MySql)
 
 This project provides a simple way to create a connection to a MSSQL database.
@@ -21,10 +19,12 @@ The package provides for differen constructors:
 using ZimLabs.Database.MySql;
 
 // 1: Constructor with server and database name.
-var connector = new Connector("Server", "Database", "User", "Password", 3306); // The port is optional. Default value is 3306
+var connector = new Connector("Server", "Database", 
+    "User", "Password", 3306); // The port is optional. Default value is 3306
 
 // 2: Constructor with server, database, user and password (this time as SecureString)
-var connector = new Connector("Server", "Database", "User", "Password".ToSecureString(), 3306);
+var connector = new Connector("Server", "Database", 
+    "User", "Password".ToSecureString(), 3306);
 
 // 3: Constructor with a defined connection string
 var conString = new MySqlConnectionStringBuilder
