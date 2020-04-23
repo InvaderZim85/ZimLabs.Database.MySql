@@ -37,7 +37,8 @@ namespace ZimLabs.Database.MySql
         {
             get
             {
-                if (_connection == null || _connection.State == ConnectionState.Closed || _connection.State == ConnectionState.Broken)
+                if (_connection == null || _connection.State == ConnectionState.Closed ||
+                    _connection.State == ConnectionState.Broken)
                     CreateConnection();
 
                 return _connection;
