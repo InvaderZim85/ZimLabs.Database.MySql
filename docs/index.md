@@ -74,3 +74,6 @@ const string query = "SELECT Id, Name, Mail FROM person AS p";
 
 var personList = connector.Connection.Query<Person>(query).ToList();
 ```
+
+## Demo project
+For more information about the usage of the connector take a look at the demo project: [Demo Project](https://github.com/InvaderZim85/ZimLabs.Database.MySql/tree/master/Demo)
