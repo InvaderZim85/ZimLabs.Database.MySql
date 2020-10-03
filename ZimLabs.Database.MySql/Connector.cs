@@ -139,6 +139,40 @@ namespace ZimLabs.Database.MySql
         }
 
         /// <summary>
+        /// Returns the connection info according to the given types
+        /// </summary>
+        /// <param name="type">The type</param>
+        /// <returns>The connection string info</returns>
+        public string ConnectionStringInfo(Helper.ConnectionInfoType type)
+        {
+            var server = $"Server: {_settings.Server}";
+            var database = $"Database: {_settings.Database}";
+            var user = $"User: {_settings.UserId}";
+            var port = $"Port: {_settings.Port}";
+
+            return (int) type switch
+            {
+                0 => "",
+                1 => server,
+                2 => database,
+                3 => $"{server}; {database}",
+                4 => user,
+                5 => $"{server}; {user}",
+                6 => $"{database}; {user}",
+                7 => $"{server}; {database}; {user}",
+                8 => port,
+                9 => $"{server}; {port}",
+                10 => $"{database}; {port}",
+                11 => $"{server}; {database}; {port}",
+                12 => $"{user}; {port}",
+                13 => $"{server}; {user}; {port}",
+                14 => $"{database}; {user}; {port}",
+                15 => $"{server}; {database}; {user}; {port}",
+                _ => ""
+            };
+        }
+
+        /// <summary>
         /// Disposes the class
         /// </summary>
         public void Dispose()

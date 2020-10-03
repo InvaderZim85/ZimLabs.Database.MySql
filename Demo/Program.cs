@@ -23,6 +23,7 @@ namespace Demo
             connector = new Connector("localhost", "testdatabase", "testuser", "testpassword".ToSecureString());
             LoadAndPrintPersons(connector);
 
+
             // Step 3: With complete connection string
             Console.WriteLine("Constructor wich connection string");
             var conString = new MySqlConnectionStringBuilder
@@ -35,12 +36,18 @@ namespace Demo
             connector = new Connector(conString);
             LoadAndPrintPersons(connector);
 
+
             // Step 4: With the custom settings
             Console.WriteLine("Constructor with custom settings");
             var settings =
                 new DatabaseSettings("localhost", "testdatabase", "testuser", "testpassword".ToSecureString());
             connector = new Connector(settings);
             LoadAndPrintPersons(connector);
+
+            // Step 5: Print the connection info
+            var conStringInfo =
+                connector.ConnectionStringInfo(Helper.ConnectionInfoType.Server | Helper.ConnectionInfoType.Database);
+            Console.WriteLine($"Connection: {conStringInfo}");
 
             Console.WriteLine("Done");
             Console.ReadLine();
