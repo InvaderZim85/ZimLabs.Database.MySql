@@ -46,7 +46,7 @@ namespace Demo
 
             // Step 5: Print the connection info
             var conStringInfo =
-                connector.ConnectionStringInfo(Helper.ConnectionInfoType.Server | Helper.ConnectionInfoType.Database);
+                connector.ConnectionStringInfo(ConnectionInfoType.Server | ConnectionInfoType.Database);
             Console.WriteLine($"Connection: {conStringInfo}");
 
             Console.WriteLine("Done");

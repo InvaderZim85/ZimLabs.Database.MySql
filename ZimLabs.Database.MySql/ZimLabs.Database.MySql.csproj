@@ -13,16 +13,20 @@
     <RepositoryUrl>https://github.com/InvaderZim85/ZimLabs.Database.MySql</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Helper, Database, MySql, Connector</PackageTags>
-    <Version>1.0.4</Version>
-    <PackageReleaseNotes>Added possibility to get the connection string info</PackageReleaseNotes>
-    <AssemblyVersion>1.0.4.0</AssemblyVersion>
-    <FileVersion>1.0.4.0</FileVersion>
+    <Version>1.1.0</Version>
+    <PackageReleaseNotes>Moved the enum into own class</PackageReleaseNotes>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>D:\Repositories\NuGet_Packages\ZimLabs.Database.MySql\ZimLabs.Database.MySql\ZimLabs.Database.MySql.xml</DocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ZimLabs.Database.MySql.xml" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.19" />

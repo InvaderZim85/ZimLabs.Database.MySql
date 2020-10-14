@@ -143,7 +143,7 @@ namespace ZimLabs.Database.MySql
         /// </summary>
         /// <param name="type">The type</param>
         /// <returns>The connection string info</returns>
-        public string ConnectionStringInfo(Helper.ConnectionInfoType type)
+        public string ConnectionStringInfo(ConnectionInfoType type)
         {
             var server = $"Server: {_settings.Server}";
             var database = $"Database: {_settings.Database}";
