@@ -24,6 +24,10 @@
     <DocumentationFile>D:\Repositories\NuGet_Packages\ZimLabs.Database.MySql\ZimLabs.Database.MySql\ZimLabs.Database.MySql.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\Repositories\NuGet_Packages\ZimLabs.Database.MySql\ZimLabs.Database.MySql\ZimLabs.Database.MySql.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="ZimLabs.Database.MySql.xml" />
   </ItemGroup>

@@ -4,6 +4,36 @@
         <name>ZimLabs.Database.MySql</name>
     </assembly>
     <members>
+        <member name="T:ZimLabs.Database.MySql.ConnectionInfoType">
+            <summary>
+            Provides the different connection info types
+            </summary>
+        </member>
+        <member name="F:ZimLabs.Database.MySql.ConnectionInfoType.None">
+            <summary>
+            Shows nothing
+            </summary>
+        </member>
+        <member name="F:ZimLabs.Database.MySql.ConnectionInfoType.Server">
+            <summary>
+            Shows the name of the server
+            </summary>
+        </member>
+        <member name="F:ZimLabs.Database.MySql.ConnectionInfoType.Database">
+            <summary>
+            Shows the name of the database
+            </summary>
+        </member>
+        <member name="F:ZimLabs.Database.MySql.ConnectionInfoType.User">
+            <summary>
+            Shows the user name
+            </summary>
+        </member>
+        <member name="F:ZimLabs.Database.MySql.ConnectionInfoType.Port">
+            <summary>
+            Shows the port number
+            </summary>
+        </member>
         <member name="T:ZimLabs.Database.MySql.Connector">
             <summary>
             Provides functions / properties for the interaction with a MySql database
@@ -40,6 +70,26 @@
             </summary>
             <param name="settings">The settings for the database connection</param>
         </member>
+        <member name="M:ZimLabs.Database.MySql.Connector.#ctor(System.String,System.String,System.String,System.String,System.UInt32)">
+            <summary>
+            Creates a new instance of the <see cref="T:ZimLabs.Database.MySql.Connector"/>
+            </summary>
+            <param name="server">The name / path of the server</param>
+            <param name="database">The name of the database</param>
+            <param name="userId">The user id</param>
+            <param name="password">The password</param>
+            <param name="port">The port (optional)</param>
+        </member>
+        <member name="M:ZimLabs.Database.MySql.Connector.#ctor(System.String,System.String,System.String,System.Security.SecureString,System.UInt32)">
+            <summary>
+            Creates a new instance of the <see cref="T:ZimLabs.Database.MySql.Connector"/>
+            </summary>
+            <param name="server">The name / path of the server</param>
+            <param name="database">The name of the database</param>
+            <param name="userId">The user id</param>
+            <param name="password">The password</param>
+            <param name="port">The port (optional)</param>
+        </member>
         <member name="M:ZimLabs.Database.MySql.Connector.#ctor(System.Security.SecureString)">
             <summary>
             Creates a new instance of the <see cref="T:ZimLabs.Database.MySql.Connector"/>
@@ -67,6 +117,13 @@
             </summary>
             <param name="database">The name of the database</param>
             <exception cref="T:System.ArgumentNullException">Occurs when the database name is null or empty</exception>
+        </member>
+        <member name="M:ZimLabs.Database.MySql.Connector.ConnectionStringInfo(ZimLabs.Database.MySql.ConnectionInfoType)">
+            <summary>
+            Returns the connection info according to the given types
+            </summary>
+            <param name="type">The type</param>
+            <returns>The connection string info</returns>
         </member>
         <member name="M:ZimLabs.Database.MySql.Connector.Dispose">
             <summary>
@@ -102,6 +159,21 @@
             <summary>
             Gets or sets the port
             </summary>
+        </member>
+        <member name="M:ZimLabs.Database.MySql.DatabaseSettings.#ctor">
+            <summary>
+            Creates a new empty instance of the <see cref="T:ZimLabs.Database.MySql.DatabaseSettings"/>
+            </summary>
+        </member>
+        <member name="M:ZimLabs.Database.MySql.DatabaseSettings.#ctor(System.String,System.String,System.String,System.Security.SecureString,System.UInt32)">
+            <summary>
+            Creates a new instance of the <see cref="T:ZimLabs.Database.MySql.DatabaseSettings"/>
+            </summary>
+            <param name="server">The name / path of the server</param>
+            <param name="database">The name of the database</param>
+            <param name="userId">The user id</param>
+            <param name="password">The password</param>
+            <param name="port">The port (optional)</param>
         </member>
         <member name="T:ZimLabs.Database.MySql.Helper">
             <summary>
