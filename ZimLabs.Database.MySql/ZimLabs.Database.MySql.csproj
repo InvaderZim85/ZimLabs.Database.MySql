@@ -13,10 +13,10 @@
     <RepositoryUrl>https://github.com/InvaderZim85/ZimLabs.Database.MySql</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Helper, Database, MySql, Connector</PackageTags>
-    <Version>1.1.0</Version>
-    <PackageReleaseNotes>Moved the enum into own class</PackageReleaseNotes>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0.0</FileVersion>
+    <Version>1.1.1</Version>
+    <PackageReleaseNotes>Update of the used packages</PackageReleaseNotes>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <FileVersion>1.1.1.0</FileVersion>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MySql.Data" Version="8.0.19" />
+    <PackageReference Include="MySql.Data" Version="8.0.22" />
   </ItemGroup>
 
   <ItemGroup>
