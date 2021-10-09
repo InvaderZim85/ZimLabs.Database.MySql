@@ -16,7 +16,7 @@ namespace Demo
             Console.WriteLine("Normal constructor");
             var connector = new Connector("localhost", "testdatabase", "testuser", "testpassword");
             LoadAndPrintPersons(connector);
-            
+
 
             // Step 2: Normal constructor with secure password
             Console.WriteLine("Normal constructor with secure password");
@@ -45,9 +45,12 @@ namespace Demo
             LoadAndPrintPersons(connector);
 
             // Step 5: Print the connection info
-            var conStringInfo =
-                connector.ConnectionStringInfo(ConnectionInfoType.Server | ConnectionInfoType.Database);
-            Console.WriteLine($"Connection: {conStringInfo}");
+            Console.WriteLine("Connection info");
+            for (var i = 0; i <= 34; i++)
+            {
+                Console.WriteLine(connector.ConnectionStringInfo((ConnectionInfoType)i));
+            }
+
 
             Console.WriteLine("Done");
             Console.ReadLine();

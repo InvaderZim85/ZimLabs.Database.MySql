@@ -64,11 +64,9 @@ namespace ZimLabs.Database.MySql
         /// <param name="userId">The user id</param>
         /// <param name="password">The password</param>
         /// <param name="port">The port (optional)</param>
-        public Connector(string server, string database, string userId, string password, uint port = 3306) : this(
-            new DatabaseSettings(server, database, userId, password.ToSecureString(), port))
-        {
-
-        }
+        /// <param name="connectionTimeout">The connection timeout (optional, 15 = default value)</param>
+        public Connector(string server, string database, string userId, string password, uint port = 3306, uint connectionTimeout = 15) : this(
+            new DatabaseSettings(server, database, userId, password.ToSecureString(), port, connectionTimeout)) { }
 
         /// <summary>
         /// Creates a new instance of the <see cref="Connector"/>
@@ -78,11 +76,9 @@ namespace ZimLabs.Database.MySql
         /// <param name="userId">The user id</param>
         /// <param name="password">The password</param>
         /// <param name="port">The port (optional)</param>
-        public Connector(string server, string database, string userId, SecureString password, uint port = 3306) : this(
-            new DatabaseSettings(server, database, userId, password, port))
-        {
-
-        }
+        /// <param name="connectionTimeout">The connection timeout (optional, 15 = default value)</param>
+        public Connector(string server, string database, string userId, SecureString password, uint port = 3306, uint connectionTimeout = 15) : this(
+            new DatabaseSettings(server, database, userId, password, port, connectionTimeout)) { }
 
         /// <summary>
         /// Creates a new instance of the <see cref="Connector"/>
@@ -98,14 +94,21 @@ namespace ZimLabs.Database.MySql
         /// </summary>
         private void CreateConnectionString()
         {
-            _connectionString = new MySqlConnectionStringBuilder
+            var conString = new MySqlConnectionStringBuilder
             {
                 Server = _settings.Server,
                 Database = _settings.Database,
                 UserID = _settings.UserId,
                 Password = _settings.Password.ToInsecureString(),
                 Port = _settings.Port
-            }.ConnectionString.ToSecureString();
+            };
+
+            if (_settings.ConnectionTimeout > 0)
+                conString.ConnectionTimeout = _settings.ConnectionTimeout;
+            else
+                _settings.ConnectionTimeout = conString.ConnectionTimeout;
+
+            _connectionString = conString.ConnectionString.ToSecureString();
         }
 
         /// <summary>
@@ -145,31 +148,7 @@ namespace ZimLabs.Database.MySql
         /// <returns>The connection string info</returns>
         public string ConnectionStringInfo(ConnectionInfoType type)
         {
-            var server = $"Server: {_settings.Server}";
-            var database = $"Database: {_settings.Database}";
-            var user = $"User: {_settings.UserId}";
-            var port = $"Port: {_settings.Port}";
-
-            return (int) type switch
-            {
-                0 => "",
-                1 => server,
-                2 => database,
-                3 => $"{server}; {database}",
-                4 => user,
-                5 => $"{server}; {user}",
-                6 => $"{database}; {user}",
-                7 => $"{server}; {database}; {user}",
-                8 => port,
-                9 => $"{server}; {port}",
-                10 => $"{database}; {port}",
-                11 => $"{server}; {database}; {port}",
-                12 => $"{user}; {port}",
-                13 => $"{server}; {user}; {port}",
-                14 => $"{database}; {user}; {port}",
-                15 => $"{server}; {database}; {user}; {port}",
-                _ => ""
-            };
+            return Helper.GetConnectionInfo(type, _settings);
         }
 
         /// <summary>

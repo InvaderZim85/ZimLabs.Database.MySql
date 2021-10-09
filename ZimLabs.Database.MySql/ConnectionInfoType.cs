@@ -31,6 +31,11 @@ namespace ZimLabs.Database.MySql
         /// <summary>
         /// Shows the port number
         /// </summary>
-        Port = 8
+        Port = 8,
+
+        /// <summary>
+        /// Shows the connection timeout
+        /// </summary>
+        ConnectionTimeout = 16
     }
 }

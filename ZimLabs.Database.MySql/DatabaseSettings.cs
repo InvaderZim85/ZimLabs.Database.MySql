@@ -33,6 +33,11 @@ namespace ZimLabs.Database.MySql
         public uint Port { get; set; }
 
         /// <summary>
+        /// Gets or sets the connection timeout
+        /// </summary>
+        public uint ConnectionTimeout { get; set; }
+
+        /// <summary>
         /// Creates a new empty instance of the <see cref="DatabaseSettings"/>
         /// </summary>
         public DatabaseSettings(){ }
@@ -45,13 +50,15 @@ namespace ZimLabs.Database.MySql
         /// <param name="userId">The user id</param>
         /// <param name="password">The password</param>
         /// <param name="port">The port (optional)</param>
-        public DatabaseSettings(string server, string database, string userId, SecureString password, uint port = 3306)
+        /// <param name="connectionTimeout">The connection timeout (optional, 15 = default value)</param>
+        public DatabaseSettings(string server, string database, string userId, SecureString password, uint port = 3306, uint connectionTimeout = 15)
         {
             Server = server;
             Database = database;
             UserId = userId;
             Password = password;
             Port = port;
+            ConnectionTimeout = connectionTimeout;
         }
     }
 }
